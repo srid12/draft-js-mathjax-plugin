@@ -34,7 +34,8 @@
     "clean": "rm -rf ./lib",
     "build": "npm run clean && npm run build:js",
     "build:js": "BABEL_DISABLE_CACHE=1 BABEL_ENV=production NODE_ENV=production babel --out-dir='lib' --ignore='__test__/*' src",
-    "lint": "eslint 'src/*.js' 'src/**/*.js'; exit 0"
+    "lint": "eslint 'src/*.js' 'src/**/*.js'; exit 0",
+    "prepare": "npm run build"
   },
   "license": "MIT",
   "dependencies": {},
