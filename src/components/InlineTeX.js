@@ -130,7 +130,7 @@ export default class InlineTeX extends Component {
     const { editMode, teX, displaystyle } = this.state
 
     const completion = this.props.getStore().completion
-
+    const readOnly = this.props.getStore().getReadOnly();
     let input = null
     if (editMode) {
       input = (
@@ -166,7 +166,7 @@ export default class InlineTeX extends Component {
       >
         {input}
         <span
-          onMouseDown={() => this._update()}
+          onMouseDown={() => { if(this.readOnly) return; this._update()}}
           style={style}
           contentEditable={false}
         >
