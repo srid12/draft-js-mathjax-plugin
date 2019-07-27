@@ -166,7 +166,7 @@ export default class InlineTeX extends Component {
       >
         {input}
         <span
-          onMouseDown={() => { if(this.readOnly) return; this._update()}}
+          onMouseDown={() => { if(readOnly) return; this._update()}}
           style={style}
           contentEditable={false}
         >
